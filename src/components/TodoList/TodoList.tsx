@@ -50,7 +50,7 @@ const TodoList = forwardRef((props: TodoListProps, ref: Ref<TodoListRef>) => {
     btnCellRenderer: BtnCellRenderer
   });
 
-  useEffect(() => onReload());
+  useEffect(onReload, [completed]);
 
   const onFilter = (value: string) => {
     const filterInstance = gridApi.getFilterInstance('task');
